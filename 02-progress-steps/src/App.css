@@ -1,0 +1,76 @@
+#root {
+  width: 100%;
+  height: 97vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 400px;
+  height: auto;
+}
+
+.progress-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 4px;
+  z-index: 1;
+  top: 15px;
+  background: #d2483e;
+  transition: 0.5s ease;
+}
+
+@keyframes progressBarAnimation {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+.progress-bar.empty {
+  width: 100%;
+  z-index: 0;
+  background: #3f3f3f;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  z-index: 2;
+  background: #242424;
+  border-radius: 100%;
+  border: 3px #3f3f3f solid;
+}
+
+.circle.active {
+  border-color: #d2483e;
+  animation: circleAnimation 1s;
+}
+
+@keyframes circleAnimation {
+  from { border-color: #3f3f3f; }
+  to { border-color: #d2483e; }
+}
+
+.btn {
+  margin: 20px 20px 0px 0px;
+  width: 75px;
+  height: 30px;
+  padding: 0px;
+  border: 0px;
+  border-radius: 10px;
+  background: #000000;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
